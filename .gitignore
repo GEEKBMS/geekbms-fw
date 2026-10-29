@@ -1,0 +1,27 @@
+# Build
+build/
+cmake-build-*/
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# IDE
+.vscode/
+.idea/
+*.uvguix.*
+*.uvoptx
+DebugConfig/
+RTE/
+
+# Python tools
+__pycache__/
+.venv/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
