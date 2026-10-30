@@ -1,0 +1,33 @@
+# Example pack config for geekbms-fw tools (NOT production calibration)
+# All register addresses remain TBD until DS map is filled.
+
+meta:
+  schema: geekbms-fw-params/0.1
+  afe: DVC1124
+  notes: Research only. See SECURITY.md.
+
+pack:
+  cell_count: 16          # 5..24
+  chemistry_hint: LFP     # documentation only
+
+protect_placeholder_mv:
+  # Software policy placeholders — hardware thresholds need reg map
+  cell_ov_mv: 3650
+  cell_uv_mv: 2500
+
+i2c:
+  addr7: 0x20             # DS default W=0x40 / R=0x41
+  hz: 100000
+  crc_enable: true
+
+balance:
+  max_internal_ma: 25     # DS recommended upper bound
+  # mask policy: odd/even alternating — enforced in driver/core later
+
+fet:
+  default_chg: false
+  default_dsg: false
+
+registers:
+  # Explicitly empty on purpose — do not invent offsets
+  map_status: TBD
